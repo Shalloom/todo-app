@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Strategy Pro</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="weekly.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-left">
+            <span class="material-icons">auto_awesome</span>
+            <h1>Weekly Strategy</h1>
+        </div>
+        <a href="index.html" class="home-btn">
+            <span class="material-icons">home</span> Home
+        </a>
+    </header>
+
+    <main class="weekly-container">
+        <section class="days-grid" id="daysGrid">
+            <div class="day-box active" onclick="switchDay('Mon', this)"><span>Mon</span></div>
+            <div class="day-box" onclick="switchDay('Tue', this)"><span>Tue</span></div>
+            <div class="day-box" onclick="switchDay('Wed', this)"><span>Wed</span></div>
+            <div class="day-box" onclick="switchDay('Thu', this)"><span>Thu</span></div>
+            <div class="day-box" onclick="switchDay('Fri', this)"><span>Fri</span></div>
+            <div class="day-box highlight" onclick="switchDay('Sat', this)"><span>Sat</span></div>
+            <div class="day-box highlight" onclick="switchDay('Sun', this)"><span>Sun</span></div>
+        </section>
+
+        <div class="content-split">
+            <section class="card weekly-task-card">
+                <div id="toast" class="card-toast"></div>
+
+                <div class="card-header">
+                    <h2>Plans for <span id="currentDayDisplay">Mon</span></h2>
+                    <span class="material-icons">stars</span>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-labels">
+                        <span id="progressText">0% Completed</span>
+                        <span id="statusIcon">📈</span>
+                    </div>
+                    <div class="progress-track">
+                        <div id="progressFill"></div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <input id="weeklyInput" placeholder="Add a plan..."
+                        onkeypress="if(event.key==='Enter') addWeekly()">
+                    <button class="add-weekly-btn" onclick="addWeekly()">Add</button>
+                </div>
+
+                <ul id="weeklyList"></ul>
+            </section>
+
+            <aside class="right-col">
+                <section class="side-card">
+                    <h3><span class="material-icons">emoji_events</span> Achievements</h3>
+                    <p style="font-size: 1.3rem; color: yellow;"> <strong>Complete 100% of your day to hear the
+                            victory chime
+                            and see confetti!</strong></p>
+                </section>
+            </aside>
+
+        </div>
+    </main>
+
+    <script src="weekly.js"></script>
+</body>
+
+</html>

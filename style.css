@@ -1,0 +1,199 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1a2a6c, gray, brown);
+    background-size: 400% 400%;
+    animation: gradentBG 15s ease infinite;
+}
+
+@keyframes gradentBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+.daily-bg {
+    background: linear-gradient(rgba(41, 128, 185, 0.7), rgba(41, 128, 185, 0.7)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1920&q=80');
+}
+
+.weekly-bg {
+    background: linear-gradient(rgba(75, 0, 130, 0.7), rgba(75, 0, 130, 0.7)), url('https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1920&q=80');
+}
+
+.glass-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 800px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.header h1 {
+    font-size: 35px;
+    color: #1a2a6c;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-style: italic;
+    color: #666;
+    font-size: 25px;
+    margin-bottom: 30px;
+
+}
+
+.button-group {
+    display: inline-block;
+    margin-left: auto;
+    justify-content: space-between;
+}
+
+.btn-daily {
+    padding: 20px 20px;
+    background-color: lightblue;
+    border-radius: 28px;
+    transition: all 0.3s ease;
+    font-size: 30px;
+    font-style: italic;
+}
+
+.btn-daily:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.05);
+}
+
+
+.btn-daily .icon-box {
+    background-color: #007bff;
+    color: #e0d1ff;
+}
+
+.btn-daily a {
+    text-decoration: none;
+    color: black;
+}
+
+.btn-daily a:hover {
+    color: yellow;
+}
+
+
+.btn-weekly {
+    padding: 20px 20px;
+    background-color: lightblue;
+    border-radius: 28px;
+    transition: all 0.3s ease;
+    margin-left: 100px;
+    font-size: 30px;
+    font-style: italic;
+
+}
+
+.btn-weekly :hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.05);
+}
+
+.btn-weekly a {
+    text-decoration: none;
+    color: black;
+}
+
+.btn-weekly a:hover {
+    color: yellow;
+}
+
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: blue;
+    margin-right: 15px;
+}
+
+
+.footer-hint {
+    margin-top: 25px;
+    font-size: 20px;
+    color: #aaa;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+/* =========================
+   ROOT & RESET
+========================= */
+.daily-bg {
+    background: linear-gradient(rgba(41, 128, 185, 0.7), rgba(41, 128, 185, 0.7)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1920&q=80');
+}
+
+/* =========================
+   MAIN APP CONTAINER
+========================= */
+
+/* =========================
+   CALENDAR
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.calendar-day.active {
+    background-color: #4f46e5;
+    color: white;
+}
+
+.calendar-day.today {
+    border: 2px solid #4f46e5;
+    font-weight: bold;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 10px;
+}
+
+.day p {
+    display: inline-block;
+    font-size: 30px;
+    padding: 10px 10px;
+}
+
+.numbers {
+    font-size: 20px;
+    display: flex;
+}

@@ -1,0 +1,337 @@
+/* 1. RESET COLORS & VARIABLES */
+:root {
+    --bg-body: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-primary: #1a1c2e;
+    --accent-color: #3f51b5;
+    /* Professional Indigo */
+    --add-btn-color: #2ecc71;
+    /* Vibrant Green */
+    --shadow-main: 0 20px 40px rgba(0, 0, 0, 0.12), 0 5px 15px rgba(0, 0, 0, 0.05);
+    --border-radius: 24px;
+}
+
+body.dark {
+    --bg-body: #0b0e14;
+    --card-bg: #161b22;
+    --text-primary: #e6edf3;
+    --accent-color: #58a6ff;
+    --shadow-main: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    transition: all 0.3s ease;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    padding-bottom: 40px;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: var(--card-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent-color);
+}
+
+.logo-area h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--text-primary);
+}
+
+
+/* CALENDAR CARD SPECIFIC UPDATES */
+
+.calendar-card {
+    min-height: 280px !important;
+    /* Forces a shorter height */
+}
+
+/* Header & Icon Styling */
+.calendar-header-main {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2px solid rgba(63, 81, 181, 0.1);
+    padding-bottom: 15px;
+}
+
+.main-cal-icon {
+    font-size: 42px;
+    /* Large Icon */
+    color: var(--accent-color);
+}
+
+.calendar-card h2 {
+    font-size: 26px;
+    /* Larger Font */
+    font-weight: 800;
+    margin: 0;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* Target Date Word & Wrapper */
+.target-date-wrapper {
+    margin-top: 10px;
+}
+
+.target-label {
+    font-size: 22px;
+    /* Increased "Target Date" size */
+    font-weight: 700;
+    color: #64748b;
+    /* Professional Slate Grey */
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* The Input Box */
+.calendar-input {
+    width: 100%;
+    padding: 19px !important;
+    /* Set to 19px as requested */
+    font-size: 19px !important;
+    /* Set to 19px as requested */
+    font-weight: 600;
+    border-radius: 16px;
+    border: 2px solid #e2e8f0;
+    background: #f8fafc;
+    color: #1e293b;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.calendar-input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(63, 81, 181, 0.15);
+}
+
+/* Event List Styling */
+.calendar-placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.event-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: rgba(63, 81, 181, 0.05);
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #475569;
+}
+
+.event-item .material-icons {
+    font-size: 20px;
+    color: var(--accent-color);
+}
+
+/* DARK MODE OVERRIDES */
+body.dark .calendar-input {
+    background: #0f172a;
+    border-color: #334155;
+    color: white;
+}
+
+body.dark .event-item {
+    background: rgba(255, 255, 255, 0.03);
+    color: #94a3b8;
+}
+
+/* LAYOUT */
+.layout {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    /* Calendar is now wider than the task column */
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 4. ENHANCED BOX SHADOW FOR CARDS */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 35px;
+    min-height: 480px;
+    /* Long Cards */
+    box-shadow: var(--shadow-main);
+    /* Premium multi-layer shadow */
+    position: relative;
+    /* Needed for corner button & toast */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+.momentum-card {
+    background: linear-gradient(135deg, #020617 0%, #0f172a 100%) !important;
+    color: #ffffff;
+}
+
+.momentum-card h2 {
+    color: white;
+}
+
+.momentum-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+.momentum-item:hover {
+    background-color: khaki;
+    transform: skew(10deg);
+}
+
+/* 2. ADD BUTTON - TOP RIGHT CORNER */
+.add-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--add-btn-color);
+    /* Color Option 3 */
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+}
+
+.add-btn:hover {
+    transform: rotate(90deg) scale(1.1);
+    background-color: #27ae60;
+}
+
+/* 3. TOAST MESSAGE INSIDE CARD */
+.card-toast {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    /* Hidden initially */
+    background: #1a1c2e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 0 0 15px 15px;
+    font-size: 0.85rem;
+    z-index: 10;
+    width: 80%;
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.card-toast.show {
+    transform: translate(-50%, 0);
+    /* Slides down into view */
+}
+
+/* INPUTS & LISTS */
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.02);
+    margin-bottom: 20px;
+    color: inherit;
+}
+
+li {
+    background: rgba(0, 0, 0, 0.03);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress-bar {
+    height: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#progressFill {
+    height: 100%;
+    border-radius: 10px;
+    background: var(--add-btn-color);
+    width: 0%;
+}
+
+.home-nav-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #0f172a;
+    /* Deep blue-black to match momentum */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.home-nav-button .material-icons {
+    font-size: 18px;
+}
+
+.home-nav-button:hover {
+    background-color: #3b82f6;
+    /* Modern blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    color: #ffffff;
+}
+
+/* Adjust position if inside the header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

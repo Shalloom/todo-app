@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Daily Planner</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="daily.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-area">
+            <span class="material-icons">dashboard</span>
+            <h1>Daily Planner</h1>
+        </div>
+        <div class="header-right">
+            <span id="dateTime"></span>
+            <button class="dark-btn" onclick="toggleDark()">🌙</button>
+            <a href="index.html" class="home-nav-button">
+                <span class="material-icons">home</span>
+                Go to Home
+            </a>
+        </div>
+    </header>
+
+    <main class="layout">
+        <section class="card calendar-card">
+            <div class="calendar-header-main">
+                <span class="material-icons main-cal-icon">calendar_today</span>
+                <h2>Schedule Overview</h2>
+            </div>
+
+            <div class="target-date-wrapper">
+                <p class="target-label">Target Date</p>
+                <input type="date" class="calendar-input">
+            </div>
+
+            <div class="calendar-placeholder">
+                <div class="event-item">
+                    <span class="material-icons">wb_sunny</span>
+                    <span>Morning: Deep Work Session</span>
+                </div>
+                <div class="event-item">
+                    <span class="material-icons">groups</span>
+                    <span>Afternoon: Client Strategy</span>
+                </div>
+                <div class="event-item">
+                    <span class="material-icons">nightlight</span>
+                    <span>Evening: Daily Review</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="right-column">
+            <section class="card task-card">
+                <div id="toast" class="card-toast"></div>
+
+                <div class="task-header">
+                    <h2>Daily Tasks</h2>
+                    <button class="add-btn" onclick="addTask()">+</button>
+                </div>
+
+                <input id="taskInput" type="text" placeholder="Add a task..."
+                    onkeypress="if(event.key==='Enter') addTask()" />
+                <p id="hintText">Your list is empty.</p>
+
+                <ul id="taskList"></ul>
+
+                <div class="progress-wrapper">
+                    <div id="progressText">0% Completed</div>
+                    <div class="progress-bar">
+                        <div id="progressFill"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card momentum-card">
+                <h2>🔥 Momentum</h2>
+                <div class="momentum-list">
+                    <label class="momentum-item">
+                        <input type="checkbox" class="track" onchange="updateProgress()">
+                        <strong>Review today’s goals</strong>
+                    </label>
+                    <label class="momentum-item">
+                        <input type="checkbox" class="track" onchange="updateProgress()">
+                        <strong> Do one productive action</strong>
+                    </label>
+                    <label class="momentum-item">
+                        <input type="checkbox" class="track" onchange="updateProgress()">
+                        <strong> Drink 2L of water</strong>
+                    </label>
+                    <label class="momentum-item">
+                        <input type="checkbox" class="track" onchange="updateProgress()">
+                        <strong> 15 mins of mindfulness </strong>
+                    </label>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="daily.js"></script>
+</body>
+
+</html>
